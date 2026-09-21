@@ -1,0 +1,154 @@
+.historical-chart {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =====================================================
+   DATE FILTER
+===================================================== */
+
+.history-filter {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: end;
+
+    gap: 20px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.history-date {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.history-date label {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+}
+
+
+.history-date input {
+
+    height: 30px;
+
+    padding: 0 8px;
+
+    border: var(--border);
+
+    border-radius: 5px;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.history-filter button {
+
+    height: 30px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.history-filter button:hover {
+
+    background: #ddd;
+
+}
+
+
+.history-filter button:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.6;
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.history-error {
+
+    text-align: center;
+
+    color: red;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================================
+   CHART
+===================================================== */
+
+.history-chart-container {
+
+    position: relative;
+
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+
+    flex: 1;
+
+    min-height: 0;
+
+}
+
+
+/* =====================================================
+   NO DATA
+===================================================== */
+
+.no-history {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: rgba(255,255,255,0.5);
+
+}

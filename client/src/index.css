@@ -1,0 +1,114 @@
+:root {
+  --text: white;
+  --bg: #26384A;
+  --itemBg: linear-gradient(90deg, #0f3460 0%, #16213e 50%, #0f3460 100%);
+  --shadow: 2px 4px #16213e;
+  --border: 2px solid black;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+    /* Chart */
+  --chart-grid: rgba(255, 255, 255, 0.15);
+  --chart-border: rgba(255, 255, 255, 0.4);
+  --chart-text: var(--text);
+
+  --scrollbar-thumb: rgba(255, 255, 255, 0.4);
+  --scrollbar-track: transparent;
+
+    /* Chart navigation - Dark */
+  --chart-nav-bg: rgba(255, 255, 255, 0.25);
+  --chart-nav-text: #000;
+  --chart-nav-indicator: rgba(255, 255, 255, 0.35);
+  --select-bg: rgba(30, 41, 59, 0.7);
+  --select-box: #1e293b;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+.light{
+  --text: #1f2937;
+  --bg: #f9fafb;
+  --itemBg: lightblue;
+  --shadow: 2px 4px #cbd5e1;
+  --border: 2px solid blue;
+
+    /* Chart */
+  --chart-grid: rgba(31, 41, 55, 0.15);
+  --chart-border: rgba(31, 41, 55, 0.4);
+  --chart-text: var(--text);
+
+    /* Chart navigation - Light */
+  --chart-nav-bg: rgba(31, 41, 55, 0.12);
+  --chart-nav-text: #1f2937;
+  --chart-nav-indicator: rgba(255, 255, 255, 0.8);
+  --select-bg: rgba(31, 41, 55, 0.12);
+  --select-box: rgba(255, 255, 255, 0.8);
+
+  --scrollbar-thumb: rgba(31, 41, 55, 0.4);
+  --scrollbar-track: transparent;
+}
+
+
+body {
+  margin: 0;
+}
+
+h3{
+  color: var(--text);
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.report-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Chrome / Edge / Safari */
+
+.report-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.report-scroll::-webkit-scrollbar-track {
+    background: var(--scrollbar-track) !important;
+}
+
+.report-scroll::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+
+.report-scroll::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}

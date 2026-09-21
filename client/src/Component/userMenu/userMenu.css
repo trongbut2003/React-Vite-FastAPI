@@ -1,0 +1,94 @@
+.user-menu {
+    position: relative;
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar-button {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #ddd;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    z-index: 998;
+}
+
+.avatar-button:hover {
+    background: #ccc;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.user-dropdown {
+    position: absolute;
+
+    top: 43px;
+    right: 0;
+
+    width: 220px;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    z-index: 1001;
+}
+
+
+/* =========================
+   MENU ITEM
+========================= */
+
+.user-menu-item {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: none;
+
+    background: white;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+    z-index: 1002;
+    position: relative;
+}
+
+.user-menu-item:hover {
+    background: #f2f2f2;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.user-menu-item.logout {
+    color: #d32f2f;
+
+    border-top: 1px solid #eee;
+}

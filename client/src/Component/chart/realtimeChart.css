@@ -1,0 +1,84 @@
+   .clear-btn:hover { background-color: #ef4444; }
+
+    .trend-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 4px;
+        height: 25px;
+        width: 90%;
+        left: 5%;
+        position: relative;
+    }
+
+    .trend-item {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        background: var(--select-bg);
+        border-radius: 5px;
+        padding: 2px 4px;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .trend-item select {
+        height: 28px;
+        padding: 2px 4px;
+        border-radius: 4px;
+        background: var(--select-box);
+        color: var(--text);
+        font-size: 12px;
+        cursor: pointer;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .trend-item input[type="color"] {
+        width: 26px;
+        height: 24px;
+        border: none;
+        padding: 0;
+        background: none;
+        cursor: pointer;
+        border-radius: 3px;
+        flex-shrink: 0;
+    }
+
+    .clear-btn {
+        background-color: var(--select-bg);
+        color: var(--text);
+        border: none;
+        border-radius: 5px;
+        padding: 4px 12px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 28px;
+        flex-shrink: 0;
+        transition: background-color 0.2s;
+        white-space: nowrap;
+    }
+
+    .clear-btn:hover {
+        background-color: #64748b;
+    }
+
+    .stop-btn {
+        background-color: #ef4444;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 4px 14px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 28px;
+        flex-shrink: 0;
+        transition: background-color 0.2s;
+        white-space: nowrap;
+    }
+
+    .stop-btn:hover {
+        opacity: 0.85;
+    }

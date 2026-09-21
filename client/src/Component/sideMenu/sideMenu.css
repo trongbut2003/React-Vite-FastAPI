@@ -1,0 +1,138 @@
+/* =========================
+   NÚT MENU 3 GẠCH
+========================= */
+
+.menu-button {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    z-index: 1001;
+}
+
+.menu-button span {
+    width: 24px;
+    height: 3px;
+
+    background: var(--text);
+    border-radius: 2px;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.side-menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 200px;
+    height: 100vh;
+
+    background: #2f2f2f;
+
+    padding-top: 50px;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    z-index: 1000;
+
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.side-menu.show {
+    transform: translateX(0);
+}
+
+.menu-button.open span{
+    background: white;
+}
+
+.menu-button.open {
+    position: fixed;
+    top: 0px;
+    left: 10px;
+}
+
+
+/* =========================
+   TIÊU ĐỀ
+========================= */
+
+.menu-title {
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    padding: 10px;
+}
+
+
+/* =========================
+   MENU ITEM
+========================= */
+
+.menu-item {
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    text-align: left;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+.menu-item:hover {
+    background: #333;
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.menu-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 999;
+}
