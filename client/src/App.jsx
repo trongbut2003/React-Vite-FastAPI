@@ -14,6 +14,7 @@ import Socket from './pages/SocketTest+MoveArrow';
 import { useNavigation } from './Component/NavigationContext';
 import PageLoader from './Component/PageLoader';
 import Models from './pages/Model';
+import Sword from './pages/Sword';
 
 
 function App() {
@@ -67,6 +68,11 @@ function App() {
         <Route
             path="/chart"
             element={<Chart />}
+        />
+
+        <Route
+            path="/sword"
+            element={<Sword />}
         />
 
         <Route

@@ -15,7 +15,7 @@ function PageLoader({ loading }) {
           <div style={{zIndex: "1000", position: "fixed", top: "0", left: "0",width: "100%", height: "100%", backgroundColor: "black"}}>
           <img
             src="/img/Loading.gif"
-            alt="Không load được"
+            alt="Loading..."
             style={{zIndex: "1001", position: "fixed", top: "50%", left: "50%", transform: "translate(-50%,-50%)"}}
           />
           </div>

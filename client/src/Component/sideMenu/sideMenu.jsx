@@ -79,6 +79,15 @@ function SideMenu() {
 
                 <button
                     className="menu-item"
+                    onClick={() => goToPage("/sword")}
+                >
+                    <img className="white-img" src="/img/web-icon.png" width={"20px"} height={"20px"}/>
+                    <span style={{marginLeft: "5px"}}></span>
+                    Sword
+                </button>
+
+                <button
+                    className="menu-item"
                     onClick={() => window.pywebview.api.close_app()}
                 >
                     <span style={{marginLeft: "5px"}}></span>
