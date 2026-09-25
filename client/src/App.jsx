@@ -15,6 +15,7 @@ import { useNavigation } from './Component/NavigationContext';
 import PageLoader from './Component/PageLoader';
 import Models from './pages/Model';
 import Sword from './pages/Sword';
+import Goodwe from './pages/TestAPI_FromGoodwe';
 
 
 function App() {
@@ -62,7 +63,7 @@ function App() {
 
         <Route
             path="/dashboard"
-            element={<Models />}
+            element={<Goodwe />}
         />
 
         <Route
