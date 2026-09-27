@@ -92,7 +92,9 @@ function Report() {
     return (
         <div className="page">
 
-            <h3 style={{position: "relative", top: '-60px'}}>Reports</h3>
+            <div className="item header">
+             <h3 style={{position: "relative", top: '-20px'}}>Reports</h3>
+            </div>
 
             <div className = "center" style={{width: "100%"}}>
                 <div className='full-side' style={{justifyContent: "normal", height: "calc(100vh - 120px)", flexDirection: "row", marginBottom: "5px", marginTop: "5px" }}>

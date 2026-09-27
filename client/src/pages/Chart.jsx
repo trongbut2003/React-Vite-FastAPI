@@ -34,7 +34,9 @@ function Chart() {
     return (
         <div className="page">
 
-            <h3 style={{position: "relative", top: '-60px'}}>Charts</h3>
+            <div className="item header">
+             <h3 style={{position: "relative", top: '-20px'}}>Charts</h3>
+            </div>
 
             <div
             className="center"

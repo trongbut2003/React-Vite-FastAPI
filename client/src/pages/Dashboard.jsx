@@ -74,7 +74,9 @@ useEffect(() => {
     return (
         <div className="page">
 
-            <h3 style={{position: "relative", top: '-60px'}}>TestWeb</h3>
+            <div className="item header">
+             <h3 style={{position: "relative", top: '-20px'}}>TestWeb</h3>
+            </div>
 
         <div className = "center">
             <div className="full-side" style={{ height: "auto", flexDirection: "row", marginBottom: "2px"}}>

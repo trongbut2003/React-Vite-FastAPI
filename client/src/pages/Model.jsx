@@ -9,10 +9,10 @@ import { useNavigation } from "../Component/NavigationContext";
 const OUTLINE_COLOR = 0xfdfd00;
 
 const HIGHLIGHT_CONFIG = {
-  Room1:    { url: '/home/inv1' },
-  T1:    { url: '/home/inv2' },
-  D2: { url: '/home/inv3' },
-  Room2:    { url: '/home/inv4' },
+  Room1:    { url: '/home/inv1', name: 'Inv01' },
+  T1:    { url: '/home/inv2', name: 'Inv02' },
+  D2: { url: '/home/inv3', name: 'Inv03' },
+  Room2:    { url: '/home/inv4', name: 'Inv04' },
 };
 
 // =====================================================
@@ -46,19 +46,19 @@ function Model({ onMeshesReady }) {
 
   // CHECK MESH + PARENT
 
-useEffect(() => {
-  console.log('=== TOÀN BỘ CẤU TRÚC SCENE ===');
+// useEffect(() => {
+//   console.log('=== TOÀN BỘ CẤU TRÚC SCENE ===');
 
-  const printTree = (object, depth = 0) => {
-    const indent = '  '.repeat(depth);
-    const name = object.name || '(không có tên)';
-    console.log(`${indent}${object.type}: ${name}`);
+//   const printTree = (object, depth = 0) => {
+//     const indent = '  '.repeat(depth);
+//     const name = object.name || '(không có tên)';
+//     console.log(`${indent}${object.type}: ${name}`);
 
-    object.children.forEach((child) => printTree(child, depth + 1));
-  };
+//     object.children.forEach((child) => printTree(child, depth + 1));
+//   };
 
-  printTree(clonedScene);
-}, [clonedScene]);
+//   printTree(clonedScene);
+// }, [clonedScene]);
 
   // MATERIAL
   useEffect(() => {
@@ -99,8 +99,10 @@ useEffect(() => {
 
   const handlePointerOver = (e) => {
     e.stopPropagation();
-    if (findHighlightObject(e.object)) {
+    const obj = findHighlightObject(e.object);
+    if (obj) {
       document.body.style.cursor = 'pointer';
+      document.body.title = HIGHLIGHT_CONFIG[obj.name].name;
     }
   };
 
@@ -128,7 +130,9 @@ function Models() {
 
   return (
     <div className="page">
-      <h3 style={{ position: "relative", top: "-60px" }}>3D web</h3>
+      <div className="item header">
+        <h3 style={{position: "relative", top: '-20px'}}>3D Web</h3>
+      </div>
 
       <div className="center" style={{ width: "100%" }}>
         <div

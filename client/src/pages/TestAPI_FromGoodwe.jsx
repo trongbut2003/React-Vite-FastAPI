@@ -18,8 +18,10 @@ export default function Goodwe() {
             "content-type": "application/json",
             token: JSON.stringify({
                 uid: "d0301bf9-2063-4e90-8cad-0766f59e61af",
-                timestamp: "1790300726407",
-                token: "971795d7d879a0c365cc658d8934fb4a",
+                //timestamp: "1790307741774",
+
+                //token sẽ thay đổi không biết thời gian duy trì
+                token: "8f9763696e08939c3ccfd4d6765a189f",
                 client: "semsPlusWeb",
                 version: "",
                 language: "en",
@@ -29,8 +31,6 @@ export default function Goodwe() {
             }),
             uuid: "e65c254f-80d7-4031-b27e-59e2a9ee21f2",
 
-            //Tham số x-sign này có thể thay đổi? Không rõ thời gian duy trì
-            //"x-signature": "YzdlODQ0NmE0ZjU1ODUzYTk5YWE2ODZkZDBmMjhkOWI2YWI0MTgxYTFmZGEwOGMyM2E0ZmNkYjA4NGExZTJkNkAxNzkwMzA2NDM2ODAy"
             },
             body: JSON.stringify({
             stationId: "6ccaf0b6-fb92-4e7f-a956-b4b907334f5e",
@@ -52,6 +52,7 @@ export default function Goodwe() {
       }
 
       const result = await response.json();
+      console.log(result);
       const data = result.data.dataList;
       const final = {
         "pSystem": data[0].powerData[data[0].powerData.length - 2].power,

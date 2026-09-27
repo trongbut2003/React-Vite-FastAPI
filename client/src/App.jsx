@@ -5,7 +5,6 @@ import { Routes, Route, useLocation  } from "react-router-dom";
 import SideMenu from "./Component/sideMenu/sideMenu";
 import UserMenu from "./Component/userMenu/userMenu";
 import Dashboard from "./pages/Dashboard";
-import Setting from "./pages/Settings";
 import Chart from "./pages/Chart";
 import Report from './pages/Report';
 import Home from "./pages/Home";
@@ -14,8 +13,6 @@ import Socket from './pages/SocketTest+MoveArrow';
 import { useNavigation } from './Component/NavigationContext';
 import PageLoader from './Component/PageLoader';
 import Models from './pages/Model';
-import Sword from './pages/Sword';
-import Goodwe from './pages/TestAPI_FromGoodwe';
 
 
 function App() {
@@ -26,10 +23,8 @@ function App() {
 
   return (
   <div className="container">
-    <div className="item header" style={{ visibility: loading ? "hidden" : "visible"}}>
-      <span><SideMenu /></span>
-    </div>
-    <Routes location={location} style={{ visibility: loading ? "hidden" : "visible"}}>
+    <span><SideMenu /></span>
+    <Routes location={location}>
 
         <Route
             path="/"
@@ -63,17 +58,12 @@ function App() {
 
         <Route
             path="/dashboard"
-            element={<Goodwe />}
+            element={<Models />}
         />
 
         <Route
             path="/chart"
             element={<Chart />}
-        />
-
-        <Route
-            path="/sword"
-            element={<Sword />}
         />
 
         <Route
@@ -84,10 +74,6 @@ function App() {
     </Routes>
 
     <PageLoader loading={loading} />
-
-    <div className="item footer" style={{ visibility: loading ? "hidden" : "visible"}}>
-        <div>@test-web</div>
-    </div>
 
   </div>
   )

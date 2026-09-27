@@ -28,8 +28,9 @@ function Inv({ number }) {
     };
     return (
         <div className="page">
-
-            <h3 style={{position: "relative", top: '-60px'}}>Home</h3>
+            <div className="item header">
+             <h3 style={{position: "relative", top: '-20px'}}>Home</h3>
+            </div>
 
             <div className = "center">
                 <div className = "item bread-crumb">
@@ -37,7 +38,7 @@ function Inv({ number }) {
                     <span>&nbsp;›&nbsp;</span>
                     <span>☀ Inverter 0{number}</span>
                     </div>
-                <div className='full-side' style={{ height: "calc(100vh - 145px)", flexDirection: "row", marginBottom: "5px"}}>
+                <div className='full-side' style={{ height: "calc(100vh - 80px)", flexDirection: "row", marginBottom: "5px"}}>
                     <div className='item left-side' style={{height: "100%", width: "400px"}}>
                         <div style={{ position: "absolute", top: "0", left: '50%', transform: "translateX(-50%)"}}>Inverter 0{number}</div>
                         <button className="inv-nav-btn" onClick={goPre} disabled={number <= 1} style={{left: "5px"}}>
