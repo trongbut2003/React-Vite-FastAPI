@@ -13,6 +13,7 @@ import Socket from './pages/SocketTest+MoveArrow';
 import { useNavigation } from './Component/NavigationContext';
 import PageLoader from './Component/PageLoader';
 import Models from './pages/Model';
+import MonitorDashBoard from './pages/DashBoard/MonitorDashBoard';
 
 
 function App() {
@@ -58,7 +59,12 @@ function App() {
 
         <Route
             path="/dashboard"
-            element={<Models />}
+            element={<MonitorDashBoard />}
+        />
+
+        <Route
+            path="/sword"
+            element={<MonitorDashBoard />}
         />
 
         <Route

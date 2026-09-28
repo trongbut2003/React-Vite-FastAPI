@@ -28,12 +28,11 @@ function SideMenu() {
             <button
                 className={`menu-button ${open ? "open" : ""}`}
                 onClick={() => setOpen(!open)}
+                style={{ position: 'fixed'}}
             >
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
 
 

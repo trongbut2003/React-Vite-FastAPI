@@ -34,17 +34,21 @@
   --select-bg: rgba(30, 41, 59, 0.7);
   --select-box: #1e293b;
 
+  --panel:#0E1626;--panel2:#0A1120;--line:#1C2740;--ink:#E7ECF5;--mut:#8593AB;
+ --pv:#F59E0B;--grid:#2FA8F5;--load:#22C58B;
+
   @media (max-width: 1024px) {
     font-size: 16px;
   }
 }
 
 .light{
+  --panel:#fff;--panel2:#F4F7FB;--line:#D9E0EA;--ink:#152033;--mut:#5F6E85;
   --text: #1f2937;
-  --bg: #f9fafb;
-  --itemBg: lightblue;
+  --bg:  #EEF2F7;
+  --itemBg: linear-gradient(180deg, #ffffff 0%, #c9e9ff 100%); 
   --shadow: 2px 4px #cbd5e1;
-  --border: 2px solid blue;
+  --border: 2px solid #D9E0EA;
 
     /* Chart */
   --chart-grid: rgba(31, 41, 55, 0.15);
@@ -112,3 +116,8 @@ p {
     width: 0;
     height: 0;
 }
+
+html{scrollbar-color:#2A3550 #070B14;scrollbar-width:thin}
+html::-webkit-scrollbar{width:10px}
+html::-webkit-scrollbar-track{background:#070B14}
+html::-webkit-scrollbar-thumb{background:#2A3550;border-radius:6px}
