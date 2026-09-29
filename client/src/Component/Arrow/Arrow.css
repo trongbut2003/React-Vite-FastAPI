@@ -7,3 +7,55 @@
   width: 100%;
   height: 100%;
 }
+
+.z-path {
+  width: 100%;
+  height: 100%;
+}
+
+.z-path svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.flow-line {
+  stroke-dasharray: 30 1000;
+  animation: flowForward 3s linear infinite;
+}
+
+.flow-line.reverse {
+  animation: flowReverse 3s linear infinite;
+}
+
+/* Glow phía sau */
+.flow-glow {
+  stroke-dasharray: 30 1000;
+  opacity: 0.25;
+  filter: blur(5px);
+  animation: flowForward 3s linear infinite;
+}
+
+.flow-glow.reverse {
+  animation: flowReverse 3s linear infinite;
+}
+
+@keyframes flowForward {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -1030;
+  }
+}
+
+@keyframes flowReverse {
+  from {
+    stroke-dashoffset: -1030;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -43,6 +43,7 @@
 }
 
 .light{
+  --bg-scroll: #fff; --scroll: #F4F7FB;
   --panel:#fff;--panel2:#F4F7FB;--line:#D9E0EA;--ink:#152033;--mut:#5F6E85;
   --text: #1f2937;
   --bg:  #EEF2F7;
@@ -117,7 +118,4 @@ p {
     height: 0;
 }
 
-html{scrollbar-color:#2A3550 #070B14;scrollbar-width:thin}
-html::-webkit-scrollbar{width:10px}
-html::-webkit-scrollbar-track{background:#070B14}
-html::-webkit-scrollbar-thumb{background:#2A3550;border-radius:6px}
+html::-webkit-scrollbar{display:none}

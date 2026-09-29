@@ -20,6 +20,7 @@
         "KANGWON",
         "kvar",
         "Landmarker",
+        "lerp",
         "mediapipe",
         "metalness",
         "NLMT",
@@ -29,6 +30,7 @@
         "realtimechart",
         "resumepopup",
         "setp",
+        "simgauge",
         "TNHH"
     ]
 }

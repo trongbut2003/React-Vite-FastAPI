@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Arrow from "../Component/Arrow/Arrow";
+import { Gauge, SimGauge } from "../Component/Gauge/gauge"
 
 function Socket() {
   const ws = useRef(null);
@@ -37,10 +38,32 @@ function Socket() {
       <p>Server: {received}</p>
       <Arrow
         id = {"line1"}
-        path = {"M 5 10 H 150 V 150 H 200"}
+        path = {"M 5 10 H 150 V 150 H 200 L 100 100"}
         duration={5}
-        reverse={1}
+        reverse={0}
+        arrow={1}
       ></Arrow>
+      <Gauge 
+        title="Nhiệt độ"
+        value={60}
+        min={0}
+        max={100}
+        unit="°C"
+        color="#007bff" /* Màu xanh lá/dương chủ đạo */
+        width={260}
+        height={260}
+      />
+      <SimGauge 
+        title="Nhiệt độ"
+        value={60}
+        min={0}
+        max={100}
+        unit="°C"
+        color="yellow" /* Màu xanh lá/dương chủ đạo */
+        width={260}
+        height={200}
+      />
+
     </div>
   );
 }

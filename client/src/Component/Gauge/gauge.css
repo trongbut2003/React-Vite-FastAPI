@@ -1,0 +1,75 @@
+.gauge {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--gauge-size) * 0.05);
+  color: var(--text);
+  border: 2px solid var(--gauge-color);
+  border-radius: calc(var(--gauge-size) * 0.07);
+  background: var(--panel);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.gauge__svg {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.gauge__needle {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gauge__title {
+  color: var(--text);
+  font-size: calc(var(--gauge-size) * 0.055);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gauge__needle {
+    transition: none;
+  }
+}
+
+/* ---- Thêm vào cuối gauge.css ---- */
+.simgauge {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 calc(var(--gauge-size) * 0.05) 0 calc(var(--gauge-size) * 0.05);
+  color: var(--text);
+  border: 2px solid var(--gauge-color);
+  border-radius: calc(var(--gauge-size) * 0.07);
+  background: var(--panel);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.simgauge__svg {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.simgauge__title {
+  font-size: calc(var(--gauge-size) * 0.09);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

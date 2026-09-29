@@ -44,7 +44,7 @@ function Model({ onMeshesReady }) {
   }, [highlightMeshes, onMeshesReady]);
 
 
-  // CHECK MESH + PARENT
+  // Kiểm tra tên mesh hoặc các group trên mess
 
 // useEffect(() => {
 //   console.log('=== TOÀN BỘ CẤU TRÚC SCENE ===');
@@ -66,7 +66,7 @@ function Model({ onMeshesReady }) {
       if (!child.isMesh) return;
 
       child.material = child.material.clone();
-      child.material.color.set('#caf2ff');
+      child.material.color.set('#caf2ff');  //màu các phần tử
       child.material.transparent = true;
       child.material.opacity = 0.35;
 
@@ -81,6 +81,8 @@ function Model({ onMeshesReady }) {
     });
   }, [clonedScene]);
 
+
+  //Tìm phần tử có cần highlight
   const findHighlightObject = (object) => {
     let obj = object;
     while (obj) {
@@ -90,6 +92,7 @@ function Model({ onMeshesReady }) {
     return null;
   };
 
+  //Sự kiện click
   const handleClick = (e) => {
     e.stopPropagation();
     const obj = findHighlightObject(e.object);
@@ -97,6 +100,7 @@ function Model({ onMeshesReady }) {
     startNavigation(navigate, HIGHLIGHT_CONFIG[obj.name].url);
   };
 
+  //Tạo title và hover cursor
   const handlePointerOver = (e) => {
     e.stopPropagation();
     const obj = findHighlightObject(e.object);
@@ -106,6 +110,7 @@ function Model({ onMeshesReady }) {
     }
   };
 
+  //Tắt cursor khi ra khỏi
   const handlePointerOut = () => {
     document.body.style.cursor = 'default';
   };

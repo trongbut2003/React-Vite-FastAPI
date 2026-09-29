@@ -59,7 +59,7 @@ function App() {
 
         <Route
             path="/dashboard"
-            element={<MonitorDashBoard />}
+            element={<Socket />}
         />
 
         <Route
