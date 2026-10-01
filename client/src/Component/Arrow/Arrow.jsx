@@ -9,9 +9,11 @@ export default function Arrow({
   arrow = 0,
   lineColor = "#ddd",
   color = "#1677ff",
+  width = 500,
+  height = 300,
 }) {
   return (
-    <div className="z-path">
+    <div className="z-path" style={{ width, height }}>
       <svg viewBox={box}>
         {/* Đường chính */}
         <path
@@ -67,85 +69,82 @@ export default function Arrow({
           </>
         ) : (
           <>
-            <path
-              d={path}
-              pathLength="100"
-              fill="none"
-              stroke={color}
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeDasharray="10 90"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-100"
-                dur={`${duration}s`}
-                repeatCount="indefinite"
-              />
-            </path>
+            <defs>
+              <filter id={`${id}-glow`} x="-100%" y="-300%" width="300%" height="700%">
+                <feGaussianBlur stdDeviation="4" />
+              </filter>
+              <filter id={`${id}-soft-glow`} x="-100%" y="-300%" width="300%" height="700%">
+                <feGaussianBlur stdDeviation="1.5" />
+              </filter>
+            </defs>
+            {[0, 1].map((index) => (
+              <g key={index}>
+                {[
+                  { length: 10, width: 15, opacity: 0.16, filter: `url(#${id}-glow)` },
+                  ...Array.from({ length: 9 }, (_, layerIndex) => {
+                    const progress = (layerIndex + 1) / 9;
+                    return {
+                      length: 10 - progress * 9.2,
+                      width: 1.2 + progress * 6.8,
+                      opacity: 0.55 + progress * 0.4,
+                      filter: progress < 0.65 ? undefined : `url(#${id}-soft-glow)`,
+                    };
+                  }),
+                ].map((layer, layerIndex) => {
+                  const fromOffset = reverse ? -90 : -(10 - layer.length);
+                  const toOffset = fromOffset + (reverse ? 100 : -100);
 
-            <path
-              d={path}
-              pathLength="100"
-              fill="none"
-              stroke={color}
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeDasharray="10 90"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-100"
-                dur={`${duration}s`}
-                begin={`-${duration / 2}s`}
-                repeatCount="indefinite"
-              />
-            </path>
-            <path
-              d={path}
-              pathLength="100"
-              fill="none"
-              stroke={color}
-              strokeWidth="8"
-              strokeLinecap="round"
-              strokeDasharray="10 90"
-              opacity="0.35"
-              filter="blur(5px)"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-100"
-                dur={`${duration}s`}
-                repeatCount="indefinite"
-              />
-            </path>
-
-            <path
-              d={path}
-              pathLength="100"
-              fill="none"
-              stroke={color}
-              strokeWidth="8"
-              strokeLinecap="round"
-              strokeDasharray="10 90"
-              opacity="0.35"
-              filter="blur(5px)"
-            >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-100"
-                dur={`${duration}s`}
-                begin={`-${duration / 2}s`}
-                repeatCount="indefinite"
-              />
-            </path>
+                  return (
+                    <path
+                      key={layerIndex}
+                      d={path}
+                      pathLength="100"
+                      fill="none"
+                      stroke={color}
+                      strokeWidth={layer.width}
+                      strokeLinecap="round"
+                      strokeDasharray={`${layer.length} ${100 - layer.length}`}
+                      opacity={layer.opacity}
+                      filter={layer.filter}
+                    >
+                      <animate
+                        attributeName="stroke-dashoffset"
+                        from={fromOffset}
+                        to={toOffset}
+                        dur={`${duration}s`}
+                        begin={index === 0 ? "0s" : `-${duration / 2}s`}
+                        repeatCount="indefinite"
+                      />
+                    </path>
+                  );
+                })}
+                <circle r="4.5" fill={color} opacity="0.8" filter={`url(#${id}-glow)`}>
+                  <animateMotion
+                    dur={`${duration}s`}
+                    begin={`-${duration * (index * 0.5 + 0.1)}s`}
+                    repeatCount="indefinite"
+                    keyPoints={reverse ? "1;0" : "0;1"}
+                    keyTimes="0;1"
+                    calcMode="linear"
+                  >
+                    <mpath href={`#${id}`} />
+                  </animateMotion>
+                </circle>
+                <circle r="1.8" fill="#fff">
+                  <animateMotion
+                    dur={`${duration}s`}
+                    begin={`-${duration * (index * 0.5 + 0.1)}s`}
+                    repeatCount="indefinite"
+                    keyPoints={reverse ? "1;0" : "0;1"}
+                    keyTimes="0;1"
+                    calcMode="linear"
+                  >
+                    <mpath href={`#${id}`} />
+                  </animateMotion>
+                </circle>
+              </g>
+            ))}
           </>
-
-
         )}
       </svg>
     </div>

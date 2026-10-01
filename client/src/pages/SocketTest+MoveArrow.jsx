@@ -38,10 +38,12 @@ function Socket() {
       <p>Server: {received}</p>
       <Arrow
         id = {"line1"}
-        path = {"M 5 10 H 150 V 150 H 200 L 100 100"}
+        path = {"M 5 10 H 500 V 450 H 500 L 100 100"}
         duration={5}
-        reverse={0}
+        reverse={1}
         arrow={1}
+        width={300}
+        height={200}
       ></Arrow>
       <Gauge 
         title="Nhiệt độ"
